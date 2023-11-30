@@ -55,6 +55,10 @@ function RootLayoutNav() {
             name={"new-game-steps/[step]"}
             options={{ headerShown: false }}
           />
+          <Stack.Screen
+            name={"game/[count]"}
+            options={{ headerShown: false }}
+          />
         </Stack>
       </GluestackUIProvider>
     </ThemeProvider>
