@@ -25,8 +25,8 @@ export function FourPlayersGame2() {
             w="$full"
             h="$full"
             goTo="left"
-            bg="$amber500"
-            $active-bg="$amber700"
+            bg="$red500"
+            $active-bg="$red700"
           />
         </HStack>
         <HStack flex={1} gap="$2">
@@ -36,8 +36,8 @@ export function FourPlayersGame2() {
             w="$full"
             h="$full"
             goTo="right"
-            bg="$amber500"
-            $active-bg="$amber700"
+            bg="$purple500"
+            $active-bg="$purple700"
           />
           <Life
             life={life}
@@ -45,8 +45,8 @@ export function FourPlayersGame2() {
             w="$full"
             h="$full"
             goTo="left"
-            bg="$amber500"
-            $active-bg="$amber700"
+            bg="$tertiary500"
+            $active-bg="$tertiary700"
           />
         </HStack>
       </VStack>

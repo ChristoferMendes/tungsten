@@ -100,6 +100,7 @@ export function Life({
           fontSize="$xl"
           right={props.goTo === "right" ? "$4" : null}
           left={props.goTo === "left" ? "$4" : null}
+          transform={[{ rotate }]}
         >
           {lifeAdded > 0 && `+${lifeAdded}`}
         </ButtonText>
@@ -156,6 +157,7 @@ export function Life({
         right={"$8"}
         fontSize="$xl"
         bottom={props.goTo === "top" ? "$4" : "$24"}
+        transform={[{ rotate }]}
       >
         {lifeRemoved > 0 && `-${lifeRemoved}`}
       </ButtonText>
@@ -164,6 +166,7 @@ export function Life({
         right={"$8"}
         fontSize="$xl"
         top={props.goTo === "top" ? "$4" : "$24"}
+        transform={[{ rotate }]}
       >
         {lifeAdded > 0 && `+${lifeAdded}`}
       </ButtonText>
