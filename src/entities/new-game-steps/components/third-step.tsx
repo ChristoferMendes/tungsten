@@ -1,30 +1,48 @@
-import { View, Text } from "@gluestack-ui/themed";
+import { View, Text, VStack } from "@gluestack-ui/themed";
 import { usePlayersCount } from "~/entities/new-game-steps/store/use-players-count";
-import { TwoPlayersLayout1 } from "~/entities/new-game-steps/components/game-layouts/two/two-players-layout-1";
-import { TwoPlayersLayout2 } from "~/entities/new-game-steps/components/game-layouts/two/two-players-layout-2";
+import { layouts } from "~/entities/new-game-steps/constants/layouts";
+import {
+  useCheckIfPlayersLayoutHasOnlyOneAlternative,
+  CHECK_STATUS,
+} from "~/entities/new-game-steps/hooks/use-check-if-players-layout-has-only-one-alternative";
+import { LayoutContainers } from "./layout-containers";
 
-const layouts = {
-  2: [TwoPlayersLayout1, TwoPlayersLayout2]
-}
-
-function getLayoutForPlayersCount(count: number) {
-  const toString = count.toString()
+function getLayoutForPlayersCount(playersCount: number) {
+  const toString = playersCount.toString();
   const hasLayout = toString in layouts;
 
   if (!hasLayout) {
     return [];
   }
 
-  return layouts['2'];
+  return layouts[playersCount as keyof typeof layouts];
 }
 
 export function ThirdStep() {
   const { count } = usePlayersCount();
   const components = getLayoutForPlayersCount(count);
+  const status = useCheckIfPlayersLayoutHasOnlyOneAlternative(count);
+
+  if (status === CHECK_STATUS.CHECKING) {
+    return null;
+  }
 
   return (
-    <View>
-      <Text>Third step</Text>
-    </View>
-  )
+    <VStack flex={1} pt="$56">
+      <Text
+        color={"white"}
+        fontSize={"$4xl"}
+        fontWeight="$bold"
+        lineHeight={"$7xl"}
+        textAlign="center"
+      >
+        HOW'S YOUR TABLE?
+      </Text>
+      <LayoutContainers count={count}>
+        {components.map((Component, index) => (
+          <Component key={index} />
+        ))}
+      </LayoutContainers>
+    </VStack>
+  );
 }
