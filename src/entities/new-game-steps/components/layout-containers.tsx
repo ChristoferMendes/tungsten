@@ -13,11 +13,7 @@ export function LayoutContainers({
   count: number;
   children: React.ReactNode;
 }) {
-  if (count === 2) {
-    return <HStack bg="$red300">{children}</HStack>;
-  }
-
-  if (is(count, 4, 5)) {
+  if (is(count, 2, 4, 5)) {
     return (
       <HStack justifyContent="space-around" alignItems="center">
         {children}
