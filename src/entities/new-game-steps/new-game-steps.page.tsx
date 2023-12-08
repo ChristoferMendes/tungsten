@@ -9,10 +9,10 @@ import { ThirdStep } from "~/entities/new-game-steps/components/third-step";
 const steps = {
   "1": FirstStep,
   "2": SecondStep,
-  "3": ThirdStep
+  "3": ThirdStep,
 };
 
-export function NewGameSteps() {
+export function NewGameStepsPage() {
   const { step } = useLocalSearchParams<{ step: keyof typeof steps }>();
   useHandleStepsGoBack(step);
 
