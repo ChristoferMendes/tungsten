@@ -1,18 +1,15 @@
 import { Button, ButtonText, HStack, VStack } from "@gluestack-ui/themed";
 import { useEffect, useState } from "react";
+import { useLife } from "~/entities/new-game-steps/store/use-life";
 
 type ContainerProps = React.ComponentProps<typeof VStack>;
 type LifeProps = {
-  life: number;
   orientation?: "horizontal" | "vertical";
   goTo?: "left" | "right" | "top" | "bottom";
 };
 
-export function Life({
-  life,
-  orientation,
-  ...props
-}: LifeProps & ContainerProps) {
+export function Life({ orientation, ...props }: LifeProps & ContainerProps) {
+  const { life } = useLife();
   const [currentLife, setCurrentLife] = useState(life);
   const [lifeRemoved, setLifeRemoved] = useState(0);
   const [lifeAdded, setLifeAdded] = useState(0);

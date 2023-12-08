@@ -19,7 +19,6 @@ export function FourPlayersGame1() {
     <SafeAreaView style={containerStyle.container}>
       <HStack px="$2">
         <Life
-          life={life}
           orientation="horizontal"
           w="$full"
           h="$32"
@@ -35,7 +34,6 @@ export function FourPlayersGame1() {
         // bg="$amber100"
       >
         <Life
-          life={life}
           orientation="vertical"
           goTo="right"
           bg="$red500"
@@ -51,7 +49,6 @@ export function FourPlayersGame1() {
           $active-bg="$red900"
         />
         <Life
-          life={life}
           orientation="vertical"
           goTo="left"
           bg="$purple500"
@@ -68,7 +65,6 @@ export function FourPlayersGame1() {
       </HStack>
       <HStack px="$2">
         <Life
-          life={life}
           w="$full"
           orientation="horizontal"
           h="$32"

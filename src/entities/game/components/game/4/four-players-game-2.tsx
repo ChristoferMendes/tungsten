@@ -23,7 +23,6 @@ export function FourPlayersGame2() {
       <VStack flex={1} gap="$4" px="$2">
         <HStack justifyContent="space-between">
           <Life
-            life={life}
             orientation="vertical"
             goTo="right"
             bg="$amber500"
@@ -40,7 +39,6 @@ export function FourPlayersGame2() {
             }}
           />
           <Life
-            life={life}
             orientation="vertical"
             goTo="left"
             bg="$red700"
@@ -57,7 +55,6 @@ export function FourPlayersGame2() {
         </HStack>
         <HStack justifyContent="space-between">
           <Life
-            life={life}
             orientation="vertical"
             // h="$96"
             goTo="right"
@@ -75,7 +72,6 @@ export function FourPlayersGame2() {
             }}
           />
           <Life
-            life={life}
             orientation="vertical"
             // h="$96"
             goTo="left"

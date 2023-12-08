@@ -1,5 +1,10 @@
-import { View } from "@gluestack-ui/themed";
+import { GameContainer } from "../game-container";
+import { Life } from "../../life";
 
 export function FivePlayersGame1() {
-  return <View></View>;
+  return (
+    <GameContainer>
+      <Life />
+    </GameContainer>
+  );
 }
