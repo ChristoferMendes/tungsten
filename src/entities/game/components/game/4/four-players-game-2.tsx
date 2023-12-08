@@ -2,51 +2,93 @@ import { HStack, VStack, View } from "@gluestack-ui/themed";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Life } from "../../life";
 import { useLife } from "~/entities/new-game-steps/store/use-life";
+import { StyleSheet } from "react-native";
+
+const containerStyle = StyleSheet.create({
+  container: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+  },
+});
 
 export function FourPlayersGame2() {
   const { life } = useLife();
 
   return (
-    <SafeAreaView>
-      <VStack gap="$2">
-        <HStack flex={1} gap="$2">
+    <SafeAreaView style={containerStyle.container}>
+      <VStack flex={1} gap="$4" px="$2">
+        <HStack justifyContent="space-between">
           <Life
             life={life}
             orientation="vertical"
-            w="$full"
-            h="$full"
             goTo="right"
             bg="$amber500"
             $active-bg="$amber700"
+            sx={{
+              "@base": {
+                w: 82,
+                h: 360,
+              },
+              "@xs": {
+                w: "$24",
+                h: "$96",
+              },
+            }}
           />
           <Life
             life={life}
             orientation="vertical"
-            w="$full"
-            h="$full"
             goTo="left"
-            bg="$red500"
-            $active-bg="$red700"
+            bg="$red700"
+            $active-bg="$red800"
+            sx={{
+              "@base": {
+                w: 82,
+              },
+              "@xs": {
+                w: "$24",
+              },
+            }}
           />
         </HStack>
-        <HStack flex={1} gap="$2">
+        <HStack justifyContent="space-between">
           <Life
             life={life}
             orientation="vertical"
-            w="$full"
-            h="$full"
+            // h="$96"
             goTo="right"
-            bg="$purple500"
-            $active-bg="$purple700"
+            bg="$amber500"
+            $active-bg="$amber700"
+            sx={{
+              "@base": {
+                w: 82,
+                h: 360,
+              },
+              "@xs": {
+                w: "$24",
+                h: "$96",
+              },
+            }}
           />
           <Life
             life={life}
             orientation="vertical"
-            w="$full"
-            h="$full"
+            // h="$96"
             goTo="left"
-            bg="$tertiary500"
-            $active-bg="$tertiary700"
+            bg="$red700"
+            $active-bg="$red800"
+            sx={{
+              "@base": {
+                w: 82,
+              },
+              "@xs": {
+                w: "$24",
+              },
+            }}
           />
         </HStack>
       </VStack>

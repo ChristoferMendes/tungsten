@@ -63,18 +63,18 @@ export function Life({
           borderTopRightRadius={0}
           borderBottomRightRadius={0}
           h="$full"
-          w="$24"
           onPress={props.goTo === "left" ? increaseLife : decreaseLife}
           bg={props.bg}
+          sx={props.sx}
           $active-bg={activeBg}
         />
         <Button
           borderTopLeftRadius={0}
           borderBottomLeftRadius={0}
           h="$full"
-          w="$24"
           onPress={props.goTo === "left" ? decreaseLife : increaseLife}
           bg={props.bg}
+          sx={props.sx}
           $active-bg={activeBg}
         />
         <ButtonText
@@ -138,7 +138,6 @@ export function Life({
         borderTopLeftRadius={0}
         borderBottomLeftRadius={"$xl"}
         borderBottomRightRadius={"$xl"}
-        // onPress={decreaseLife}
         onPress={props.goTo === "top" ? decreaseLife : increaseLife}
         bg={props.bg}
         $active-bg={activeBg}

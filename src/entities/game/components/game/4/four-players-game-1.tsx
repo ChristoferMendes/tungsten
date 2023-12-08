@@ -1,4 +1,4 @@
-import { HStack, VStack, View } from "@gluestack-ui/themed";
+import { HStack } from "@gluestack-ui/themed";
 import { Life } from "../../life";
 import { useLife } from "~/entities/new-game-steps/store/use-life";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -8,10 +8,7 @@ const containerStyle = StyleSheet.create({
   container: {
     flex: 1,
     gap: 8,
-    paddingHorizontal: 8,
     paddingVertical: 8,
-    backgroundColor: "#1F1C22",
-    width: "100%",
   },
 });
 
@@ -20,7 +17,7 @@ export function FourPlayersGame1() {
 
   return (
     <SafeAreaView style={containerStyle.container}>
-      <HStack>
+      <HStack px="$2">
         <Life
           life={life}
           orientation="horizontal"
@@ -31,12 +28,26 @@ export function FourPlayersGame1() {
           $active-bg="$amber700"
         />
       </HStack>
-      <HStack gap="$3" flex={1}>
+      <HStack
+        flex={1}
+        justifyContent="space-around"
+
+        // bg="$amber100"
+      >
         <Life
           life={life}
           orientation="vertical"
           goTo="right"
           bg="$red500"
+          // w="$20"
+          sx={{
+            "@base": {
+              w: "$20",
+            },
+            "@xs": {
+              w: "$24",
+            },
+          }}
           $active-bg="$red900"
         />
         <Life
@@ -45,9 +56,17 @@ export function FourPlayersGame1() {
           goTo="left"
           bg="$purple500"
           $active-bg="$purple900"
+          sx={{
+            "@base": {
+              w: "$20",
+            },
+            "@xs": {
+              w: "$24",
+            },
+          }}
         />
       </HStack>
-      <HStack>
+      <HStack px="$2">
         <Life
           life={life}
           w="$full"
