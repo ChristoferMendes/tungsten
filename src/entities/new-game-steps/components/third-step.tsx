@@ -1,4 +1,4 @@
-import { View, Text, VStack } from "@gluestack-ui/themed";
+import { Text, VStack } from "@gluestack-ui/themed";
 import { usePlayersCount } from "~/entities/new-game-steps/store/use-players-count";
 import { layouts } from "~/entities/new-game-steps/constants/layouts";
 import {
@@ -36,7 +36,7 @@ export function ThirdStep() {
         lineHeight={"$7xl"}
         textAlign="center"
       >
-        HOW'S YOUR TABLE?
+        TABLE LAYOUT
       </Text>
       <LayoutContainers count={count}>
         {components.map((Component, index) => (

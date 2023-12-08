@@ -1,13 +1,30 @@
 import { Box } from "@gluestack-ui/themed";
 import React from "react";
+import { DimensionValue } from "react-native";
 
 type BoxProps = React.ComponentProps<typeof Box> & {
   orientation: "vertical" | "horizontal";
 };
 
+function getW(orientation: "vertical" | "horizontal", wFromProps?: any) {
+  if (wFromProps) {
+    return wFromProps;
+  }
+
+  return orientation === "vertical" ? "$12" : "$32";
+}
+
+function getH(orientation: "vertical" | "horizontal", hFromProps?: any) {
+  if (hFromProps) {
+    return hFromProps;
+  }
+
+  return orientation === "vertical" ? "$24" : "$12";
+}
+
 export function UserBox({ children, orientation, ...props }: BoxProps) {
-  const w = orientation === "vertical" ? "$12" : "$32";
-  const h = orientation === "vertical" ? "$24" : "$12";
+  const w = getW(orientation, props.w);
+  const h = getH(orientation, props.h);
 
   return (
     <Box

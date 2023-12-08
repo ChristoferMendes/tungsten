@@ -9,22 +9,22 @@ export function FivePlayersLayout1() {
     <TouchableOpacity>
       <VStack gap="$2">
         <HStack gap="$2">
-          <UserBox orientation="vertical">
+          <UserBox orientation="vertical" h="$20">
             <UserIcon rotate="right" />
           </UserBox>
-          <UserBox orientation="vertical">
+          <UserBox orientation="vertical" h="$20">
             <UserIcon rotate="left" />
           </UserBox>
         </HStack>
         <HStack gap="$2">
-          <UserBox orientation="vertical">
+          <UserBox orientation="vertical" h="$20">
             <UserIcon rotate="right" />
           </UserBox>
-          <UserBox orientation="vertical">
+          <UserBox orientation="vertical" h="$20">
             <UserIcon rotate="left" />
           </UserBox>
         </HStack>
-        <UserBox orientation="horizontal" w={106}>
+        <UserBox orientation="horizontal" w={106} h="$12">
           <UserIcon rotate="top" />
         </UserBox>
       </VStack>

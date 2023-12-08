@@ -1,5 +1,10 @@
 import { HStack, View } from "@gluestack-ui/themed";
+import { Redirect } from "expo-router";
 import React from "react";
+
+function is(count: number, ...numbers: number[]) {
+  return numbers.includes(count);
+}
 
 export function LayoutContainers({
   count,
@@ -12,7 +17,7 @@ export function LayoutContainers({
     return <HStack bg="$red300">{children}</HStack>;
   }
 
-  if (count === 4) {
+  if (is(count, 4, 5)) {
     return (
       <HStack justifyContent="space-around" alignItems="center">
         {children}
@@ -20,5 +25,5 @@ export function LayoutContainers({
     );
   }
 
-  return <View>{children}</View>;
+  return <HStack>{children}</HStack>;
 }
