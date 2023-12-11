@@ -2,10 +2,11 @@ import { HStack, VStack } from "@gluestack-ui/themed";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { UserBox } from "../user-box";
 import { UserIcon } from "../user-icon";
+import { GameLayoutContainer } from "../game-layout-container";
 
 export function SixPlayersLayout1() {
   return (
-    <TouchableOpacity>
+    <GameLayoutContainer game={6} layout={1}>
       <VStack w={105} gap="$1">
         <UserBox orientation="horizontal" w={"$full"}>
           <UserIcon rotate="bottom" />
@@ -32,6 +33,6 @@ export function SixPlayersLayout1() {
           <UserIcon rotate="top" />
         </UserBox>
       </VStack>
-    </TouchableOpacity>
+    </GameLayoutContainer>
   );
 }
