@@ -3,10 +3,11 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { UserBox } from "../user-box";
 import { User } from "lucide-react-native";
 import { UserIcon } from "../user-icon";
+import { router } from "expo-router";
 
 export function FivePlayersLayout1() {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => router.push("/game/5?layout=1")}>
       <VStack gap="$2">
         <HStack gap="$2">
           <UserBox orientation="vertical" h="$20">
